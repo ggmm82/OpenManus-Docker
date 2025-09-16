@@ -9,11 +9,8 @@ WORKDIR /app
 RUN git clone https://github.com/FoundationAgents/OpenManus
 WORKDIR /app/OpenManus
 
-# >>> workaround dipendenze
-RUN pip install "pillow==10.4.0" 
-# <<<
-
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install "pillow==10.4.0" "crawl4ai==0.6.3"
+RUN pip install --no-deps -r requirements.txt
 
 RUN playwright install
 RUN playwright install-deps
