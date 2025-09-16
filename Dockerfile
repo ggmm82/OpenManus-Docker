@@ -9,6 +9,10 @@ WORKDIR /app
 RUN git clone https://github.com/FoundationAgents/OpenManus
 WORKDIR /app/OpenManus
 
+# >>> workaround dipendenze
+RUN pip install "pillow==10.4.0" 
+# <<<
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 RUN playwright install
