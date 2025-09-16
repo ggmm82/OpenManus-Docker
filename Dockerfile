@@ -5,7 +5,7 @@ WORKDIR /app
 RUN git clone https://github.com/FoundationAgents/OpenManus
 WORKDIR /app/OpenManus
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt -c pillow>=10.4,<12
 
 RUN playwright install
 RUN playwright install-deps
