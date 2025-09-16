@@ -1,19 +1,11 @@
-FROM python:3.12
-
-RUN apt-get update && apt-get install -y git
-
-RUN pip install --upgrade pip
-
+FROM mcr.microsoft.com/playwright/python:v1.51.0-jammy
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y git
 RUN git clone https://github.com/FoundationAgents/OpenManus
 WORKDIR /app/OpenManus
 
-RUN pip install "pillow==10.4.0" "crawl4ai==0.6.3"
+RUN pip install --upgrade pip
 RUN pip install --no-deps -r requirements.txt
 
-RUN playwright install
-RUN playwright install-deps
-
 CMD ["python", "main.py"]
-# CMD ["bash"]
