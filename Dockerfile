@@ -38,4 +38,4 @@ RUN pip install --no-cache-dir playwright
 RUN playwright install
 
 # Avvio dell'applicazione
-CMD ["python", "main.py"]
+CMD ["python", "run_mcp.py"]
