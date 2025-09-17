@@ -24,6 +24,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libatspi2.0-0 \
     libgdk-pixbuf-xlib-2.0-0 \
     fonts-unifont \
+    libpango-1.0-0 \
+    libcairo2 \
  && rm -rf /var/lib/apt/lists/*
 
 # Clona il repository
@@ -38,4 +40,4 @@ RUN pip install --no-cache-dir playwright
 RUN playwright install
 
 # Avvio dell'applicazione
-CMD ["python", "run_mcp.py"]
+#CMD ["python", "run_mcp.py"]
