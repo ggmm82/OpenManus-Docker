@@ -13,4 +13,4 @@ WORKDIR /app/OpenManus
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Avvio dell'applicazione
-CMD ["sleep", "infinity"]
+CMD ["sh", "-c", "echo 'Debug mode - Listening on port 3000' && nc -l -p 3000 -k"]
