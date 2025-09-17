@@ -13,4 +13,4 @@ WORKDIR /app/OpenManus
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Avvio dell'applicazione
-CMD ["python", "main.py"]
+CMD ["python", "run_mcp_server.py"]
