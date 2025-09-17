@@ -12,5 +12,8 @@ WORKDIR /app/OpenManus
 # Installa i requisiti Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Avvio dell'applicazione
-CMD ["sh", "-c", "echo 'Debug mode - Listening on port 3000' && nc -l -p 3000 -k"]
+# Esponi la porta
+EXPOSE 3000
+
+# Avvia server HTTP semplice
+CMD ["python", "-m", "http.server", "3000", "--bind", "0.0.0.0"]
